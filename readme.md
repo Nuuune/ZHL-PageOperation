@@ -59,16 +59,21 @@ export default {
 
 <span id="searchBool"></span>
 **searchBool**  
+
 类型|默认值|说明  
 :--:|:--:|:--  
 布尔值|false|false: 搜索模块的表单控件会显示，即**searchObj**所定义会展示<br>true:搜索模块的表单控件会隐藏  
+
 ---
 <span id="searchObj"></span>
-**searchObj**
+**searchObj**  
+
 类型|默认值|说明
 :--:|:--:|:--
-数组|[]|搜索模块会遍历此数组来生成对应的表单控件
+数组|[]|搜索模块会遍历此数组来生成对应的表单控件  
+
 *此数组元素(类型为对象)说明*  
+
 字段|值类型|说明
 :--:|:--|:--
 isXXX|布尔值(true/false)|XXX的值有如下:<br>1.Number: isNumber生成一个输入框并输入类型限定为数字<br>2.Text: isText生成一个普通文本输入框<br>3.Select: isSelect生成一个下拉选择框，下拉框的选项由此元素的list字段提供<br>4.DateRange: isDateRange生成一个日期范围选择器<br>5.Date: isDate生成一个日期选择器
@@ -80,7 +85,9 @@ list|数组|只当isSelect的清况下有效，为下拉框提供选项, 此数�
 ---
 <span id="table"></span>
 **table**  
+
 table为对象类型
+
 字段|值类型|说明
 :--:|:--|:--
 searchBool|布尔值-默认为false|控制搜索模块中的搜索按钮的显示与否, false-显示
@@ -101,8 +108,10 @@ emitEditBool|布尔值-默认为false|控制当编辑按钮按下时, 是否触�
 ---
 <span id="pagination"></span>
 **pagination**  
+
 table下方的分页器配置  
-类型为对象类型
+类型为对象类型  
+
 字段|值类型|说明
 :--:|:--|:--
 page|数值|当前的页码数
@@ -112,8 +121,10 @@ total|数值|全部的数据条数
 ---
 <span id="dialog"></span>
 **dialog**  
+
 表单弹窗的配置  
-类型为对象
+类型为对象  
+
 字段|值类型|说明
 :--:|:--|:--
 title|字符串-默认路由的title|弹窗的标题名
@@ -128,7 +139,9 @@ rules2|对象|此表单的验证规则 --- 可以参考element表单部分的[ru
 ---
 <span id="getDataList"></span>
 **getDataList**  
-获取表格数据的方法
+
+获取表格数据的方法  
+
 ```javascript
 // 写法一 --- 返回请求方法
 getDataList = function(pageNum) {
@@ -164,11 +177,13 @@ getDataList = async function(pageNum) {
 ---
 <span id="loadBool"></span><span id="value"></span>
 **loadBool**与**value**  
+
 loadBool 默认为false，为true时 当value变化时 table的表格数据将会通过getDataList方法向服务器重新获得
 
 ---
 <span id="pageId"></span>
 **pageId**  
+
 pageId数据类型为任意字符串，可以不传  
 用途主要是用于在同一路由下使用了两个PageOperation组件情况；用于事件触发只会触发指定的PageOperation组件来响应
 
@@ -177,7 +192,9 @@ pageId数据类型为任意字符串，可以不传
 
 <span id="submit"></span>
 **submit**  
-@submit="handleSubmit"
+
+@submit="handleSubmit"  
+
 触发情形|参数说明
 :--|:--
 当dialog表单弹窗的提交按钮被按下时触发|handleSubmit(ruleForm2, savePrompt)<br>ruleForm2: 表单数据<br>savePrompt: function(apiRequest, apiRequestParams) 一个方法来触发submit请求<br>apiRequest: 你定义的api请求方法<br>apiRequestParams: 你请求所需要的参数
@@ -185,7 +202,9 @@ pageId数据类型为任意字符串，可以不传
 ---
 <span id="detail"></span>
 **detail**  
-@detail="handleDetail"
+
+@detail="handleDetail"  
+
 触发情形|参数说明
 :--|:--
 table.emitDetailBool为true时,<br>且按下table操作列中的查看按钮触发|handleDetail(ruleForm2)<br>ruleForm2: 此行的数据, 如果要对此进行操作, 请先copy一份来操作, 以免影响table中此行的数据
@@ -193,7 +212,9 @@ table.emitDetailBool为true时,<br>且按下table操作列中的查看按钮触�
 ---
 <span id="add"></span>
 **add**  
-@add="handleAdd"
+
+@add="handleAdd"  
+
 触发情形|参数说明
 :--|:--
 table.emitAddBool为true时,<br>且按下搜索模块中的新增按钮触发|handleAdd(ruleForm2)<br>ruleForm2: 弹窗表单对象, 可以对其作一些初始化操作
@@ -201,14 +222,18 @@ table.emitAddBool为true时,<br>且按下搜索模块中的新增按钮触发|ha
 ---
 <span id="edit"></span>
 **edit**  
-@edit="handleEdit"
+
+@edit="handleEdit"  
+
 触发情形|参数说明
 table.emitEditBool为true时,<br>且按下table操作列中的编辑按钮触发|handleEdit(ruleForm2)<br>ruleForm2: 弹窗表单对象, 可以对其作一些初始化操作
 
 ---
 <span id="del"></span>
 **del**  
-@edit="handleDel"
+
+@edit="handleDel"  
+
 触发情形|参数说明
 :--|:--
 table操作列中的删除按钮时触发|handleDel(row, delPrompt)<br>row: 此行的数据<br>delPrompt:function(apiRequest, apiRequestParams) 一个方法来触发del请求<br>apiRequest: 你定义的api请求方法<br>apiRequestParams: 你请求所需要的参数
@@ -219,7 +244,8 @@ table操作列中的删除按钮时触发|handleDel(row, delPrompt)<br>row: 此�
 <span id="bus-uses"></span>
 **bus的使用** 
 
-***导入bus,从父级刷新指定PageOperation的列表数据***
+***导入bus,从父级刷新指定PageOperation的列表数据***  
+
 ```html
 <template>
   <div>
