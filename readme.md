@@ -58,7 +58,7 @@ export default {
 >#### 数据部分
 
 <span id="searchBool"></span>
-**searchBool**
+**searchBool**  
 类型|默认值|说明  
 :--:|:--:|:--  
 布尔值|false|false: 搜索模块的表单控件会显示，即**searchObj**所定义会展示<br>true:搜索模块的表单控件会隐藏  
