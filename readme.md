@@ -59,22 +59,22 @@ export default {
 
 <span id="searchBool"></span>
 **searchBool**
-|类型|默认值|说明|
-|:--:|:--:|:--|
-|布尔值|false|false: 搜索模块的表单控件会显示，即**searchObj**所定义会展示<br>true:搜索模块的表单控件会隐藏|
+类型|默认值|说明  
+:--:|:--:|:--  
+布尔值|false|false: 搜索模块的表单控件会显示，即**searchObj**所定义会展示<br>true:搜索模块的表单控件会隐藏  
 ---
 <span id="searchObj"></span>
 **searchObj**
-|类型|默认值|说明|
-|:--:|:--:|:--|
-|数组|[]|搜索模块会遍历此数组来生成对应的表单控件|
+类型|默认值|说明
+:--:|:--:|:--
+数组|[]|搜索模块会遍历此数组来生成对应的表单控件
 *此数组元素(类型为对象)说明*  
-|字段|值类型|说明|
-|:--:|:--|:--|
-|isXXX|布尔值(true/false)|XXX的值有如下:<br>1.Number: isNumber生成一个输入框并输入类型限定为数字<br>2.Text: isText生成一个普通文本输入框<br>3.Select: isSelect生成一个下拉选择框，下拉框的选项由此元素的list字段提供<br>4.DateRange: isDateRange生成一个日期范围选择器<br>5.Date: isDate生成一个日期选择器|
-|value|字符串|在此searchObj数组里每个元素都需要不同value值, 可以理解为需要做列表请求的参数的key值|
-|label|与对应控件的值的类型对应|该字段将与控件进行双向绑定，即该值会影响控件，控件也能改变该值|
-|name|字符串|用于给这些输入控件加一个说明前缀---日期类型控件无效
+字段|值类型|说明
+:--:|:--|:--
+isXXX|布尔值(true/false)|XXX的值有如下:<br>1.Number: isNumber生成一个输入框并输入类型限定为数字<br>2.Text: isText生成一个普通文本输入框<br>3.Select: isSelect生成一个下拉选择框，下拉框的选项由此元素的list字段提供<br>4.DateRange: isDateRange生成一个日期范围选择器<br>5.Date: isDate生成一个日期选择器
+value|字符串|在此searchObj数组里每个元素都需要不同value值, 可以理解为需要做列表请求的参数的key值
+label|与对应控件的值的类型对应|该字段将与控件进行双向绑定，即该值会影响控件，控件也能改变该值
+name|字符串|用于给这些输入控件加一个说明前缀---日期类型控件无效
 list|数组|只当isSelect的清况下有效，为下拉框提供选项, 此数组元素示例{label:'展现的文字', value: '真实的值'}
 
 ---
