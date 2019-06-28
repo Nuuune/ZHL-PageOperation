@@ -226,6 +226,7 @@ table.emitAddBool为true时,<br>且按下搜索模块中的新增按钮触发|ha
 @edit="handleEdit"  
 
 触发情形|参数说明
+:--|:--
 table.emitEditBool为true时,<br>且按下table操作列中的编辑按钮触发|handleEdit(ruleForm2)<br>ruleForm2: 弹窗表单对象, 可以对其作一些初始化操作
 
 ---
